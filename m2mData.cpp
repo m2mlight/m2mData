@@ -17,7 +17,8 @@
 #include <Ethernet.h>
 
 // m2mlight.com server
-byte server[] = { 88, 198, 207, 77 };              
+char m2mserver[] = "m2mlight.com";
+//byte server[] = { 88, 198, 207, 77 };              
 EthernetClient client;
 
 // sendValue variables
@@ -26,7 +27,7 @@ EthernetClient client;
 
 void m2mData::sendValue(String api_key, float value)
 {
-  if (client.connect(server, 80)>0) {            // connect to server
+  if (client.connect(m2mserver, 80)>0) {            // connect to server
     client.print("GET /iot/pg_send_value.php?api_key="); // send values using GET
     client.print(api_key);
     client.print("&");
@@ -35,13 +36,15 @@ void m2mData::sendValue(String api_key, float value)
     client.println(" HTTP/1.0");
     client.println("User-Agent: Arduino 1.0");
     client.println();
-//    Serial.println("Connected");
+   Serial.println("Connected");
   } else {
     Serial.println("Not connected");
   }
-  if (!client.connected()) {
-//    Serial.println("Disconnected!");
-  }
+   Serial.println("Disconnecting...");
+   while(client.connected()) //Waiting until connection finish
+   {
+     if(client.available()) Serial.write(client.read());
+   }
   client.stop();
 }
 
@@ -50,23 +53,20 @@ void m2mData::sendValue(String api_key, float value)
 
 void m2mData::sendAlertEmail(String api_key)
 {
-  if (client.connect(server, 80)>0) {            // connect to server
+  if (client.connect(m2mserver, 80)>0) {            // connect to server
     client.print("GET /alert/pg_send_email.php?api_key="); // send api_key using GET
     client.print(api_key);    
     client.println(" HTTP/1.0");
     client.println("User-Agent: Arduino 1.0");
     client.println();
+    Serial.println("Connected");
   } else {
     Serial.println("Not connected");
   }
-//   Serial.println("Disconnecting...");
+   Serial.println("Disconnecting...");
    while(client.connected()) //Waiting until connection finish
    {
      if(client.available()) Serial.write(client.read());
    }
    client.stop(); 
 }
-
-
-
-
