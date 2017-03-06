@@ -5,7 +5,7 @@ First, you have to register the sensor, alert or parameter and obtain the api_ke
 
 # M2mData Library
 
-The m2mData library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight platform
+The m2mData library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight
 
 These are the five functions in the m2mData library:
 
