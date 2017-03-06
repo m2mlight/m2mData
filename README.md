@@ -5,7 +5,7 @@ First, you have to register the sensor, alert or parameter and obtain the api_ke
 
 # M2mData Library
 
-The m2mData library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight
+The m2mData Arduino Library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight.
 
 These are the five functions in the m2mData library:
 
@@ -72,5 +72,5 @@ c) Parameters
 - Call example: https://m2mlight.com/iot/pg_update_parameter?api_key=400Gx5CIHeO&value=60
 
 
-You can use these functions inside an C++ code (Arduino) or Python code (Raspberry). If you are using an Arduino is better to use the M2MData library. 
+You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
 
