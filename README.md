@@ -7,9 +7,9 @@ First, you have to register the sensor, alert or parameter and obtain the api_ke
 
 The m2mData Arduino Library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight.
 
-You have create a m2mData folder in your Arduino Libraries and download the files: m2mData.h and m2mData.cpp. You can see examples of use in these files: examples_use_m2mdata.ino 
+You have to create a m2mData folder in your Arduino Libraries and download the files: m2mData.h and m2mData.cpp. You can see examples of use in the following files: examples_use_m2mdata.ino and examples_use_m2mdata_SIM900.ino.
 
-A. When arduino is connected to Internet, there are functions in the m2mData library: 
+A. When arduino is connected to Internet, you have the following functions: 
 
 a) Sensors
 
@@ -33,17 +33,18 @@ c) Parameters
  float readParameter(String api_key);
 
  // Update the "value" of a parameter which is identified with "api_key"
- void updateParameter(String api_key, float value);
+ void updateParameter(String api_key, String value);
  
 
 
-B. When arduino is connected to Internet, there are functions in the m2mData library: 
+B. When arduino is connected to a GSM shield like SIM900, you have the following functions:
+
 
 
 
 # Server Functions
 
-Server functions can be used to send and receive values between the m2mlight platform and a program in a microcontroller (arduino, raspberry, etc.) or in a mobile device (tablet or smartphone).
+Server functions (http calls) can be used to send and receive values between the m2mlight platform and a program in a microcontroller (arduino, raspberry, esp8266 etc.) or in a mobile device (tablet or smartphone).
 
 To upload/download data to m2mlight platform using http from a browser or program, you can employ the following server functions:
 
