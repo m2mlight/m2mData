@@ -11,7 +11,7 @@ You have to create a m2mData folder in your Arduino Libraries and download the f
 
 A. When arduino is connected to Internet, you have the following functions: 
 
-a) Sensors
+a) Sensors:
 
  // Store a "value" of a sensor which is identified with "api_key"
  void sendValue(String api_key, float value);  
@@ -19,13 +19,13 @@ a) Sensors
  // Return the last value of a sensor which is identified with "api_key"
  float readValue(String api_key);
 
-b) Alerts
+b) Alerts:
     
  // Send an email of an alert which is identified with "api_key". If 
  // "value" is different from -1 then message includes this "value"
  void sendAlertEmail(String api_key, float value=-1); 
 
-c) Parameters
+c) Parameters:
 
  // Return the value of a parameter which is identified with "api_key"
  String readParameter(String api_key);
@@ -37,13 +37,16 @@ c) Parameters
 
 B. When arduino is connected to a GSM shield like SIM900, you have the following functions:
 
+a) Sensors:
 // Store a "value" of a sensor which is identified with "api_key"
 void sendValueSIM900(String api_key, float value);  
-   
+
+b) Alerts:
 // Send an email of an alert which is identified with "api_key". If 
 // "value" is different from -1 then message includes this "value"
 void sendAlertEmailSIM900(String api_key, float value=-1); 
 
+c) Parameters:
 // Update the "value" of a parameter which is identified with "api_key"
 void updateParameterSIM900(String api_key, String value);
 
