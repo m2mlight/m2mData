@@ -19,18 +19,16 @@ a) Sensors
  // Return the last value of a sensor which is identified with "api_key"
  float readValue(String api_key);
 
-
 b) Alerts
     
  // Send an email of an alert which is identified with "api_key". If 
  // "value" is different from -1 then message includes this "value"
  void sendAlertEmail(String api_key, float value=-1); 
 
-
 c) Parameters
 
  // Return the value of a parameter which is identified with "api_key"
- float readParameter(String api_key);
+ String readParameter(String api_key);
 
  // Update the "value" of a parameter which is identified with "api_key"
  void updateParameter(String api_key, String value);
@@ -39,6 +37,15 @@ c) Parameters
 
 B. When arduino is connected to a GSM shield like SIM900, you have the following functions:
 
+// Store a "value" of a sensor which is identified with "api_key"
+void sendValueSIM900(String api_key, float value);  
+   
+// Send an email of an alert which is identified with "api_key". If 
+// "value" is different from -1 then message includes this "value"
+void sendAlertEmailSIM900(String api_key, float value=-1); 
+
+// Update the "value" of a parameter which is identified with "api_key"
+void updateParameterSIM900(String api_key, String value);
 
 
 
@@ -70,11 +77,11 @@ b) Alerts
 c) Parameters
 
 - Name: pg_read_parameter
-- Description: return the value of a parameter identified by "api_key". 
+- Description: return the value of a parameter identified by "api_key". Value can be a text
 - Call example: https://m2mlight.com/iot/pg_read_parameter?api_key=300Gx5CIHeO 
 
 - Name: pg_update_parameter 
-- Description: Update with "value" the parameter identified by "api_key"
+- Description: Update with "value" the parameter identified by "api_key". Value can be a text
 - Call example: https://m2mlight.com/iot/pg_update_parameter?api_key=400Gx5CIHeO&value=60
 
 
