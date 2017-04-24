@@ -7,7 +7,9 @@ First, you have to register the sensor, alert or parameter and obtain the api_ke
 
 The m2mData Arduino Library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight.
 
-These are the five functions in the m2mData library, used when arduino is connected to Internet:
+You have create a m2mData folder in your Arduino Libraries and download the files: m2mData.h and m2mData.cpp. You can see examples of use in these files: examples_use_m2mdata.ino 
+
+A. When arduino is connected to Internet, there are functions in the m2mData library: 
 
 a) Sensors
 
@@ -33,7 +35,10 @@ c) Parameters
  // Update the "value" of a parameter which is identified with "api_key"
  void updateParameter(String api_key, float value);
  
-First, you can create a m2mData folder in your Arduino Libraries and download the files: m2mData.h and m2mData.cpp. You can see examples of use in examples_use_m2mdata.ino file.
+
+
+B. When arduino is connected to Internet, there are functions in the m2mData library: 
+
 
 
 # Server Functions
