@@ -45,21 +45,23 @@ c) Parameters:
 B. When arduino is connected to a GSM shield like SIM900, you have the following functions:
 
 a) Sensors:
+
 // Store a "value" of a sensor which is identified with "api_key"
 
 void sendValueSIM900(String api_key, float value);  
 
 b) Alerts:
+
 // Send an email of an alert which is identified with "api_key". If 
 // "value" is different from -1 then message includes this "value"
 
 void sendAlertEmailSIM900(String api_key, float value=-1); 
 
 c) Parameters:
+
 // Update the "value" of a parameter which is identified with "api_key"
 
 void updateParameterSIM900(String api_key, String value);
-
 
 
 # Server Functions
