@@ -14,9 +14,11 @@ A. When arduino is connected to Internet, you have the following functions:
 a) Sensors:
 
  // Store a "value" of a sensor which is identified with "api_key"
+ 
   void sendValue(String api_key, float value);  
 
  // Return the last value of a sensor which is identified with "api_key"
+ 
  float readValue(String api_key);
 
 b) Alerts:
