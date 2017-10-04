@@ -31,29 +31,31 @@ a) Sensors:
   Return: 0 if values are successfully inserted, -1 for invalid api_key or disable status, -2 if the interval between two values is less than 10 seconds.
 
 
-- Name: read_value
+- Name: read_sensor_value
 
-  Description: return the last stored value of a sensor identified by "api_key". Return 0 otherwise
-  Call example: https://m2mlight.com/iot/pg_receive_value?api_key=300uhxXsAH
+  Description: return the last stored value of a single sensor identified by "api_key"
+  
+  Call example: https://m2mlight.com/iot/read_sensor_value?api_key=300uhxXsAH
 
-b) Alerts
+
+b) Actuators:
+
+- Name: read_actuator_hour
+
+  Description: return the start hour (HH:MM) of an actuator identified by "api_key"
+  
+  Call example: http://m2mlight.com/iot/read_actuator_hour?api_key=180SgN4pHk
+
+
+
+
+c) Alerts:
 
 - Name: pg_send_email
 - Description: send an alert email identified by "api_key" and insert a log. Optional you can
   also send  a "value" 
 - Call examples: https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO 
                  https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO&value=57
-
-
-c) Parameters
-
-- Name: pg_read_parameter
-- Description: return the value of a parameter identified by "api_key". Value can be a text
-- Call example: https://m2mlight.com/iot/pg_read_parameter?api_key=300Gx5CIHeO 
-
-- Name: pg_update_parameter 
-- Description: Update with "value" the parameter identified by "api_key". Value can be a text
-- Call example: https://m2mlight.com/iot/pg_update_parameter?api_key=400Gx5CIHeO&value=60
 
 
 You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
