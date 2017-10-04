@@ -65,11 +65,13 @@ b) Actuators:
 
 c) Alerts:
 
-- Name: pg_send_email
-- Description: send an alert email identified by "api_key" and insert a log. Optional you can
-  also send  a "value" 
-- Call examples: https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO 
-                 https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO&value=57
+- Name: send_email_alert
+
+  Description: send an email related to an alert identified by api_key. The minimum interval between two emails is the email_time_interval property
+  
+  Call example: http://m2mlight.com/iot/send_email_alert?api_key=6trkDnjci8
+
+  Return: 0 if the mailing is successful
 
 
 You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
