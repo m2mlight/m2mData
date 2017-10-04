@@ -46,7 +46,13 @@ b) Actuators:
   
   Call example: http://m2mlight.com/iot/read_actuator_hour?api_key=180SgN4pHk
 
+- Name: update_actuator_hour
 
+  Description: update the start hour "start_hour" of the actuator identified by "api_key"
+  
+  Call example: http://m2mlight.com/iot/update_actuator_hour?api_key=a6ruhxX&start_hour=10:30
+  
+  Return: -1 if HH:MM format is not correct
 
 
 c) Alerts:
