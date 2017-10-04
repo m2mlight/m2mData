@@ -1,10 +1,12 @@
-# Server Functions and M2mdata library 
+# Server Functions and M2mdata Arduino library 
 
-First, you have to register the sensor, actuator or alert and obtain the api_key in m2mlight.com platform.
+Server functions (http calls) and a M2M Arduino library allow to use M2Mlight platform. First, you have to register the sensor, actuator or alert and obtain the api_key values in m2mlight.com platform.
 
-# Server Functions
+These server function and Arduino library can be used to send and receive values between the m2mlight platform and a program in a microcontroller (arduino, raspberry, esp8266 etc.) or in a mobile device (tablet or smartphone).
 
-Server functions (http calls) can be used to send and receive values between the m2mlight platform and a program in a microcontroller (arduino, raspberry, esp8266 etc.) or in a mobile device (tablet or smartphone).
+# 1. Server Functions
+
+
 
 To upload/download data to m2mlight platform using http from a browser or program, you can employ the following server functions:
 
@@ -43,7 +45,7 @@ c) Parameters
 You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
 
 
-# M2mData Library
+# 2. M2mData Library
 
 The m2mData Arduino Library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight.
 
