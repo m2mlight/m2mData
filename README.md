@@ -40,6 +40,14 @@ a) Sensors:
 
 b) Actuators:
 
+- Name: send_email_action
+
+  Description: send an email related to an actuator action identified by api_key. The minimum interval between two emails is 10 seconds.
+  
+  Call example: http://m2mlight.com/iot/send_email_action?api_key=LrkD1njci8
+
+  Return: 0 if the mailing is successful
+
 - Name: read_actuator_hour
 
   Description: return the start hour (HH:MM) of an actuator identified by "api_key"
