@@ -1,6 +1,46 @@
-# M2mData Library and Server Functions 
+# Server Functions and M2mdata library 
 
-First, you have to register the sensor, alert or parameter and obtain the api_key in m2mlight.com platform.
+First, you have to register the sensor, actuator or alert and obtain the api_key in m2mlight.com platform.
+
+# Server Functions
+
+Server functions (http calls) can be used to send and receive values between the m2mlight platform and a program in a microcontroller (arduino, raspberry, esp8266 etc.) or in a mobile device (tablet or smartphone).
+
+To upload/download data to m2mlight platform using http from a browser or program, you can employ the following server functions:
+
+a) Sensors
+
+- Name: pg_send_value
+
+  Description: upload (save) a sensor "value" of a sensor identified by "api_key"
+  Call example: https://m2mlight.com/iot/pg_send_value?api_key=250Gx5CIHeO&value=200 
+
+- Name: pg_receive_value
+
+  Description: return the last stored value of a sensor identified by "api_key". Return 0 otherwise
+  Call example: https://m2mlight.com/iot/pg_receive_value?api_key=300uhxXsAH
+
+b) Alerts
+
+- Name: pg_send_email
+- Description: send an alert email identified by "api_key" and insert a log. Optional you can
+  also send  a "value" 
+- Call examples: https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO 
+                 https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO&value=57
+
+
+c) Parameters
+
+- Name: pg_read_parameter
+- Description: return the value of a parameter identified by "api_key". Value can be a text
+- Call example: https://m2mlight.com/iot/pg_read_parameter?api_key=300Gx5CIHeO 
+
+- Name: pg_update_parameter 
+- Description: Update with "value" the parameter identified by "api_key". Value can be a text
+- Call example: https://m2mlight.com/iot/pg_update_parameter?api_key=400Gx5CIHeO&value=60
+
+
+You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
 
 
 # M2mData Library
@@ -62,45 +102,3 @@ c) Parameters:
 // Update the "value" of a parameter which is identified with "api_key"
 
 void updateParameterSIM900(String api_key, String value);
-
-
-# Server Functions
-
-Server functions (http calls) can be used to send and receive values between the m2mlight platform and a program in a microcontroller (arduino, raspberry, esp8266 etc.) or in a mobile device (tablet or smartphone).
-
-To upload/download data to m2mlight platform using http from a browser or program, you can employ the following server functions:
-
-a) Sensors
-
-- Name: pg_send_value
-
-  Description: upload (save) a sensor "value" of a sensor identified by "api_key"
-  Call example: https://m2mlight.com/iot/pg_send_value?api_key=250Gx5CIHeO&value=200 
-
-- Name: pg_receive_value
-
-  Description: return the last stored value of a sensor identified by "api_key". Return 0 otherwise
-  Call example: https://m2mlight.com/iot/pg_receive_value?api_key=300uhxXsAH
-
-b) Alerts
-
-- Name: pg_send_email
-- Description: send an alert email identified by "api_key" and insert a log. Optional you can
-  also send  a "value" 
-- Call examples: https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO 
-                 https://m2mlight.com/iot/pg_send_email?api_key=180Gx5CIHeO&value=57
-
-
-c) Parameters
-
-- Name: pg_read_parameter
-- Description: return the value of a parameter identified by "api_key". Value can be a text
-- Call example: https://m2mlight.com/iot/pg_read_parameter?api_key=300Gx5CIHeO 
-
-- Name: pg_update_parameter 
-- Description: Update with "value" the parameter identified by "api_key". Value can be a text
-- Call example: https://m2mlight.com/iot/pg_update_parameter?api_key=400Gx5CIHeO&value=60
-
-
-You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
-
