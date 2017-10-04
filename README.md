@@ -15,14 +15,23 @@ a) Sensors:
 
 - Name: send_sensor_value
 
-  Description: upload (save) a sensor "value" of a sensor identified by "api_key"
+  Description: upload (save) a single sensor "value" of a sensor identified by "api_key"
 
   Call example: https://m2mlight.com/iot/send_sensor_value?api_key=250hhCIHeO&value=200 
   
-  Return: 0 if a value is successfully inserted, -1 for invalid api_key or status is disable, -2 if the interval between two values is less than 10 seconds.
+  Return: 0 if a value is successfully inserted, -1 for invalid api_key or disable status, -2 if the interval between two values is less than 10 seconds.
 
 
-- Name: pg_receive_value
+- Name: send_sensor_location
+
+  Description: upload (save) a location sensor "latitude" and "longitude of a sensor identified by "api_key"
+
+  Call example: https://m2mlight.com/iot/send_sensor_location?api_key=26hyCIHeO&latitude=-0.158382&longitude=-78.45534
+  
+  Return: 0 if values are successfully inserted, -1 for invalid api_key or disable status, -2 if the interval between two values is less than 10 seconds.
+
+
+- Name: read_value
 
   Description: return the last stored value of a sensor identified by "api_key". Return 0 otherwise
   Call example: https://m2mlight.com/iot/pg_receive_value?api_key=300uhxXsAH
