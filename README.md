@@ -73,10 +73,12 @@ To upload/download data to m2mlight platform using http from a browser or progra
 a) Sensors
 
 - Name: pg_send_value
+
   Description: upload (save) a sensor "value" of a sensor identified by "api_key"
   Call example: https://m2mlight.com/iot/pg_send_value?api_key=250Gx5CIHeO&value=200 
 
 - Name: pg_receive_value
+
   Description: return the last stored value of a sensor identified by "api_key". Return 0 otherwise
   Call example: https://m2mlight.com/iot/pg_receive_value?api_key=300uhxXsAH
 
