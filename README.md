@@ -135,7 +135,7 @@ B. When arduino is connected to a GSM shield like SIM900, you have the following
    void sendValueSIM900(char api_key[], float value);  
 
 
-   // Store "latitude" and "longitud" of a location sensor is identified with "api_key"
+   // Store "latitude" and "longitude" of a location sensor identified with "api_key"
    
    void sendCoordinatesSIM900(char api_key[], float latitude, float longitude);   
 
