@@ -121,17 +121,19 @@ b) Actuators:
 
 c) Alerts:
     
- // Send an email of an alert which is identified with "api_key"
+   // Send an email of an alert identified with "api_key"
  
- void sendAlertEmail(String api_key, float value=-1); 
+   void sendEmailAlert(char api_key[]); 
 
 
 B. When arduino is connected to a GSM shield like SIM900, you have the following functions:
 
+   // Store a single "value" of a sensor identified with "api_key"
 
-// Store a "value" of a sensor which is identified with "api_key"
+   void sendValueSIM900(char api_key[], float value);  
 
-void sendValueSIM900(String api_key, float value);  
-
-
+   
+   // Store "latitude" and "longitud" of a location sensor is identified with "api_key"
+   
+   void sendCoordinatesSIM900(char api_key[], float latitude, float longitude);   
 
