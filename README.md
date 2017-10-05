@@ -89,19 +89,29 @@ a) Sensors:
 
   // Store a single "value" of a sensor identified with "api_key"
   
-  void sendValue(char api_key[], float value);  
+  void sendValue(char api_key[], float value); 
+  
 
   // Store coordinates values of a location sensor identified with "api_key"
   
   void sendCoordinates(char api_key[], float latitude, float longitude); 
 
+  
   // Return the last single value of a sensor identified with "api_key"
  
   float readValue(char api_key[]);
 
+
 b) Actuators:
+ 
+    // Send an email about an action of an actuator identified with "api_key".
+    void sendEmailAction(char api_key[]); 
 
+    // Return the star hour (HH:MM) of an actuator identified with "api_key"
+    String readActuatorHour(char api_key[]);
 
+    // Update the start hour "start_hour" of an actuator identified with "api_key"
+    void updateActuatorHour(char api_key[], char start_hour[]);
 
 
 c) Alerts:
