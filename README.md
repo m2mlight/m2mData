@@ -103,21 +103,25 @@ a) Sensors:
 
 
 b) Actuators:
+
+   // Send an email about an action of an actuator identified with "api_key"
+   
+   void sendEmailAction(char api_key[]);
  
-    // Send an email about an action of an actuator identified with "api_key".
-    void sendEmailAction(char api_key[]); 
+ 
+   // Return the star hour (HH:MM) of an actuator identified with "api_key"
 
-    // Return the star hour (HH:MM) of an actuator identified with "api_key"
-    String readActuatorHour(char api_key[]);
+   String readActuatorHour(char api_key[]);
 
-    // Update the start hour "start_hour" of an actuator identified with "api_key"
-    void updateActuatorHour(char api_key[], char start_hour[]);
+   
+   // Update the start hour "start_hour" (HH:MM) of an actuator identified with "api_key"
+   
+   void updateActuatorHour(char api_key[], char start_hour[]);
 
 
 c) Alerts:
     
- // Send an email of an alert which is identified with "api_key". If 
- // "value" is different from -1 then message includes this "value"
+ // Send an email of an alert which is identified with "api_key"
  
  void sendAlertEmail(String api_key, float value=-1); 
 
