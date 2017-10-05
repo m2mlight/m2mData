@@ -77,7 +77,7 @@ c) Alerts:
 You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
 
 
-# 2. M2mData Library
+# 2. M2mData Arduino Library
 
 The m2mData Arduino Library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight.
 
@@ -88,16 +88,20 @@ A. When arduino is connected to Internet, you have the following functions:
 a) Sensors:
 
   // Store a single "value" of a sensor identified with "api_key"
+  
   void sendValue(char api_key[], float value);  
 
-  // Store coordinates of a sensor identified with "api_key"
+  // Store coordinates values of a location sensor identified with "api_key"
+  
   void sendCoordinates(char api_key[], float latitude, float longitude); 
 
-  // Return the last value of a sensor which is identified with "api_key"
+  // Return the last single value of a sensor identified with "api_key"
  
- float readValue(String api_key);
+  float readValue(char api_key[]);
 
 b) Actuators:
+
+
 
 
 c) Alerts:
@@ -108,35 +112,11 @@ c) Alerts:
  void sendAlertEmail(String api_key, float value=-1); 
 
 
-c) Parameters:
-
- // Return the value of a parameter which is identified with "api_key"
- 
- String readParameter(String api_key);
-
- // Update the "value" of a parameter which is identified with "api_key"
- 
- void updateParameter(String api_key, String value);
- 
-
-
 B. When arduino is connected to a GSM shield like SIM900, you have the following functions:
 
-a) Sensors:
 
 // Store a "value" of a sensor which is identified with "api_key"
 
 void sendValueSIM900(String api_key, float value);  
 
-b) Alerts:
 
-// Send an email of an alert which is identified with "api_key". If 
-// "value" is different from -1 then message includes this "value"
-
-void sendAlertEmailSIM900(String api_key, float value=-1); 
-
-c) Parameters:
-
-// Update the "value" of a parameter which is identified with "api_key"
-
-void updateParameterSIM900(String api_key, String value);
