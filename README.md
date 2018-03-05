@@ -79,7 +79,7 @@ You can use these functions inside an C++ code (Arduino or Esp8266) or Python co
 
 # 2. M2mData Arduino Library
 
-The m2mData Arduino Library allows you to store and retrieve data of sensors, alerts and parameters to/from m2mlight.
+The m2mData Arduino Library allows you to store and retrieve data of sensors, actuators and alerts to/from m2mlight. You can use http or mqtt protocol.
 
 You need to create a m2mData folder in your Arduino Libraries and download the files: m2mData.h and m2mData.cpp. You can see examples of use in the following files: examples_use_m2mdata.ino and examples_use_m2mdata_SIM900.ino.
 
@@ -87,10 +87,15 @@ A. When arduino is connected to Internet, you have the following functions:
 
 a) Sensors:
 
-  // Store a single "value" of a sensor identified with "api_key"
+  // Store a single "value" of a sensor identified with "api_key" using http protocol
   
   void sendValue(char api_key[], float value); 
   
+  
+  // Store a single "value" of a sensor identified with "api_key" using mqtt protocol
+  
+  void sendValueMqtt(char api_key[], float value); 
+
 
   // Store coordinates values of a location sensor identified with "api_key"
   
