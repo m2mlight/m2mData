@@ -4,7 +4,7 @@ REST services (server functions or http calls) and a M2M Arduino library allow t
 
 These REST services and Arduino library can be used to send and receive values between the m2mlight platform and a program in a microcontroller or computer (arduino, raspberry, esp8266, etc.) or in a mobile device (tablet or smartphone).
 
-The communication with the m2mlight platform can be using Ethernet (Arduino Ethernet or ENC28J60 shields) or GSM (SIM900 GSM shield).
+The communication with the m2mlight platform can be using Ethernet (Arduino Ethernet or ENC28J60 shields) or GSM (SIM800L module).
 
 
 # 1. REST services
