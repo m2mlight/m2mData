@@ -76,14 +76,16 @@ c) Alerts:
 
 You can use these functions inside an C++ code (Arduino or Esp8266) or Python code (Raspberry).  You can see and example in the file: example_server_functions_with_a_sensor.py. If you are using an Arduino is better to use the M2MData library.
 
+If you are using a GSM/GPRS chip like SIM800L then you can connect to m2mlight.com directly with http commands. See example_use_sim800.ino.
+
 
 # 2. M2mData Arduino Library
 
 The m2mData Arduino Library allows you to store and retrieve data of sensors, actuators and alerts to/from m2mlight. You can use http or mqtt protocol.
 
-You need to create a m2mData folder in your Arduino Libraries and download the files: m2mData.h and m2mData.cpp. You can see examples of use in the following files: examples_use_m2mdata.ino and examples_use_m2mdata_SIM900.ino.
+You need to create a m2mData folder in your Arduino Libraries and download the files: m2mData.h and m2mData.cpp. You can see examples of use in the following files: examples_use_m2mdata.ino.
 
-A. When arduino is connected to Internet, you have the following functions: 
+When arduino is connected to Internet, you have the following functions: 
 
 a) Sensors:
 
@@ -130,17 +132,5 @@ c) Alerts:
  
    void sendEmailAlert(char api_key[]); 
 
-
-
-B. When arduino is connected to a GSM shield like SIM900, you have the following functions:
-
-
-   // Store a single "value" of a sensor identified with "api_key"
-
-   void sendValueSIM900(char api_key[], float value);  
-
-
-   // Store "latitude" and "longitude" of a location sensor identified with "api_key"
-   
-   void sendCoordinatesSIM900(char api_key[], float latitude, float longitude);   
+ 
 
